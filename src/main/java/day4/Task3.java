@@ -1,36 +1,36 @@
 package day4;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class Task3 {
     public static void main(String[] args) {
+        Random random = new Random();
+
         int [][] numbers = new int[12][8];
 
-        for (int i = 0; i < 12; i++) {
-            for (int j = 0; j < 8; j++) {
-                Random random = new Random();
-                numbers [i][j] = random.nextInt(50 +1) + 0;
+        for (int i = 0; i < numbers.length; i++) {
+            for (int j = 0; j < numbers[i].length; j++) {
+                numbers [i][j] = random.nextInt(50);
             }
         }
 
-        int id = 0;
+        int idLine = 0;
         int sumMax = 0;
 
-        for (int i = 0; i < 12; i++) {
+        for (int i = 0; i < numbers.length; i++) {
             int sumLine = 0;
 
-            for (int j = 0; j < 8; j++) {
+            for (int j = 0; j < numbers[i].length; j++) {
                 System.out.printf("%2d ", numbers[i][j]);
-                sumLine = sumLine + numbers [i][j];
+                sumLine += numbers [i][j];
             }
             System.out.println(" - " + sumLine);
-            if (sumLine > sumMax) {
+            if (sumLine >= sumMax) {
                 sumMax = sumLine;
-                id = i;
+                idLine = i;
             }
         }
         System.out.println();
-        System.out.println("Индекс строки, сумма чисел в которой максимальна: " + id);
+        System.out.println("Индекс строки, сумма чисел в которой максимальна: " + idLine);
     }
 }

@@ -4,11 +4,12 @@ import java.util.Random;
 
 public class Task2 {
     public static void main(String[] args) {
+        Random random = new Random();
+
         int [] numbers = new int [100];
 
         for (int i = 0; i < numbers.length; i++) {
-            Random random = new Random();
-            numbers [i] = random.nextInt(10000 +1) + 0;
+            numbers [i] = random.nextInt(10000);
         }
 
         int max = numbers [0];
@@ -25,7 +26,7 @@ public class Task2 {
 
             if (number % 10 == 0) {
                 count++;
-                sum = sum + number;
+                sum += number;
             }
         }
         System.out.println();
