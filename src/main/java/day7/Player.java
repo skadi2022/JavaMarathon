@@ -2,11 +2,11 @@ package day7;
 
 public class Player {
     private int stamina;
-    static int MAX_STAMINA = 100;
-    static int MIN_STAMINA = 0;
-    static int countPlayers = 0;
-    static int MAX_PLAYERS = 6;
-    static String freePlace;
+    private final static int MAX_STAMINA = 100;
+    private final static int MIN_STAMINA = 0;
+    private static int countPlayers = 0;
+    private final static int MAX_PLAYERS = 6;
+    private static String freePlace;
 
     public Player(int stamina) {
         this.stamina = stamina;

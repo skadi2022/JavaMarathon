@@ -13,13 +13,14 @@ public class Airplane {
         this.weight = weight;
     }
 
-    public static void compareAirplanes (Airplane airplane1, Airplane airplane2) {
-        int length1 = airplane1.length;
-        int length2 = airplane2.length;
+    public int getLength() {
+        return length;
+    }
 
-        if (length1 > length2)
+    public static void compareAirplanes (Airplane airplane1, Airplane airplane2) {
+        if (airplane1.getLength() > airplane2.getLength())
             System.out.println("Первый самолет длиннее");
-        else if (length1 < length2)
+        else if (airplane1.getLength() < airplane2.getLength())
             System.out.println("Второй самолет длиннее");
         else
             System.out.println("Длины самолетов равны");
