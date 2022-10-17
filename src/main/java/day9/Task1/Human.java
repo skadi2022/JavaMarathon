@@ -1,7 +1,7 @@
 package day9.Task1;
 
 public class Human {
-    private String name;
+    protected String name;
 
     public String getName() {
         return name;
@@ -12,6 +12,6 @@ public class Human {
     }
 
     public void printInfo () {
-        System.out.println("Этот человек с именем " + getName());
+        System.out.println("Этот человек с именем " + name);
     }
 }
