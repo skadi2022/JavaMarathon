@@ -1,6 +1,6 @@
 package day11.task2;
 
-public class Shaman extends Hero implements PhysAttack, MagicAttack, Healer {
+public class Shaman extends Hero implements MagicAttack, Healer {
     private int magicAtt;
 
     public Shaman() {

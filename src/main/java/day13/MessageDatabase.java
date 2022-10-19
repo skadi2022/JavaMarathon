@@ -18,6 +18,10 @@ public class MessageDatabase {
 
         for (Message message : messages) {
             if (u1.equals(message.getSender()) && u2.equals(message.getReceiver()) || u2.equals(message.getSender()) && u1.equals(message.getReceiver()))
+
+//            if (message.getSender() == u1 && message.getReceiver() == u2
+//            || message.getSender() == u2 && message.getReceiver() == u1);
+
                 System.out.println(message.getSender() + ": " + message.getText());
         }
     }

@@ -21,18 +21,18 @@ public class User {
     }
 
     public void subscribe (User user) {                     //подписывает пользователя на user
-        subscriptions.add(user);
+        this.subscriptions.add(user);
     }
 
     public boolean isSubscribed(User user) {                //true - если пользователь подписан на user и false если нет
-        if (subscriptions.contains(user)) {
+        if (this.subscriptions.contains(user)) {
             return true;
         } else return false;
     }
 
     public boolean isFriend(User user) {                    //true - если пользователь user является другом и false если нет
-        if (subscriptions.contains(user) && user.getSubscriptions().contains(this)) {
-            return true;
+        if (this.subscriptions.contains(user) && user.getSubscriptions().contains(this)) {
+            return true;                                    //return this.isSubscribed(user) && user.isSubscribed(this);
         } else return false;
     }
 

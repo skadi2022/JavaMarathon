@@ -12,7 +12,7 @@ public class Message {
         this.sender = sender;
         this.receiver = receiver;
         this.text = text;
-        date = new Date();
+        this.date = new Date();
     }
 
     public User getSender() {
@@ -33,9 +33,9 @@ public class Message {
 
     @Override
     public String toString() {
-        return "FROM: " + sender + "\n" +
+        return "FROM: " + this.sender + "\n" +
                 "TO: " + receiver + "\n" +
                 "ON: " + date + "\n" +
-                text;
+                text + "\n";
     }
 }

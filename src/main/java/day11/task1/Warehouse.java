@@ -20,11 +20,11 @@ public class Warehouse {
                 '}';
     }
 
-    public void countPickedOrders() {
+    public void incrementCountPickedOrders() {
         countPickedOrders++;
     }
 
-    public void countDeliveredOrders() {
+    public void incrementCountDeliveredOrders() {
         countDeliveredOrders++;
     }
 }

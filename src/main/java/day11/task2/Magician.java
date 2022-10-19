@@ -1,6 +1,6 @@
 package day11.task2;
 
-public class Magician extends Hero implements PhysAttack, MagicAttack {
+public class Magician extends Hero implements MagicAttack {
     private int magicAtt;
 
     public Magician() {
@@ -14,11 +14,6 @@ public class Magician extends Hero implements PhysAttack, MagicAttack {
         hero.health = hero.health - (magicAtt - (magicAtt * hero.magicDef) / 100);
         if (hero.health < MIN_HEALTH)
             hero.health = MIN_HEALTH;
-    }
-
-    @Override
-    public void physicalAttack(Hero hero) {
-
     }
 
     @Override
