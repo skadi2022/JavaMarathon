@@ -7,28 +7,32 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Task2 {
-    public static void main(String[] args) throws FileContentsExeption {
+    public static void main(String[] args) {
         File file = new File("people.txt");
         System.out.println(parseFileToStringList(file));
     }
 
-    public static List<String>parseFileToStringList(File file) throws FileContentsExeption {
+    public static List<String> parseFileToStringList(File file) {
         List<String> listOfPeoples = new ArrayList<>();
 
         try {
             Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
-                listOfPeoples.add(scanner.nextLine());
+                String line = scanner.nextLine();
+                String[] person = line.split(" ");
+
+                if (Integer.parseInt(person[1]) < 0)
+                    throw new FileContentsExeption("Invalid input file (age < 0)");
+
+                listOfPeoples.add(line);
             } scanner.close();
+            return listOfPeoples;
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
+        } catch (FileContentsExeption e) {
+            e.printStackTrace();
         }
-
-        for (String people : listOfPeoples) {
-            if (Integer.parseInt(people.split(" ")[1]) < 0) {
-                throw new FileContentsExeption("Invalid input file (age < 0)");
-            }
-        }
-        return listOfPeoples;
+        return null;
     }
 }
+

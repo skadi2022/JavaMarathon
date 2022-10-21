@@ -7,31 +7,31 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Task3 {
-    public static void main(String[] args) throws FileContentsExeption {
+    public static void main(String[] args) {
         File file = new File("people.txt");
         System.out.println(parseFileToObjList(file));
     }
 
-    public static List<Person> parseFileToObjList(File file) throws FileContentsExeption {
-        List<String> listOfPeoplesBeforeParsing = new ArrayList<>();
-        List<Person> listOfPeoplesAfterParsing = new ArrayList<>();
+    public static List<Person> parseFileToObjList(File file) {
+        List<Person> listOfPeople = new ArrayList<>();
 
         try {
-            Scanner scanner = new Scanner(file).useDelimiter(" ") ;
+            Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
-                listOfPeoplesBeforeParsing.add(scanner.nextLine());
-            } scanner.close();
+                String line = scanner.nextLine();
+                String[] person = line.split(" ");
 
-            for (String strBeforeParsing : listOfPeoplesBeforeParsing) {
-                if (Integer.parseInt(strBeforeParsing.split(" ")[1]) < 0) {
+                if (Integer.parseInt(person[1]) < 0)
                     throw new FileContentsExeption("Invalid input file (age < 0)");
-                }
-                listOfPeoplesAfterParsing.add(new Person(strBeforeParsing.split(" ")[0],
-                        Integer.parseInt(strBeforeParsing.split(" ")[1])));
-            }
+
+                listOfPeople.add(new Person(person[0], Integer.parseInt(person[1])));
+            } scanner.close();
+            return listOfPeople;
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
+        } catch (FileContentsExeption e) {
+            e.printStackTrace();
         }
-        return listOfPeoplesAfterParsing;
+        return null;
     }
 }

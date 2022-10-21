@@ -5,15 +5,13 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Task1 {
-    public static void main(String[] args) throws FileContentsExeption {
+    public static void main(String[] args) {
         File file = new File("numbers.txt");
-
         printSumDigits(file);
     }
 
-    public static void printSumDigits (File file) throws FileContentsExeption {
+    public static void printSumDigits (File file) {
         int sumNumbers = 0, counter = 0;
-        int[] numbers = new int[10];
 
         try {
             Scanner scanner = new Scanner(file);
@@ -21,17 +19,14 @@ public class Task1 {
             String[] lineSeparated = line.split(" ");
 
             for (String number : lineSeparated) {
-                sumNumbers += numbers[counter] = Integer.parseInt(number);
+                sumNumbers += Integer.parseInt(number);
                 counter++;
             } scanner.close();
 
-            if (counter == 10) {
+            if (counter != 10) throw new FileContentsExeption("Invalid input file, amount of numbers < or > 10");
                 System.out.println(sumNumbers);
-            }
-            else throw new FileContentsExeption("Invalid input file, amount of numbers < or > 10");
-        } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException | FileContentsExeption e) {
             System.out.println("File not found");
-
         }
     }
 }
