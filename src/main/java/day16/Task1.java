@@ -24,7 +24,7 @@ public class Task1 {
                 counter++;
             } scanner.close();
 
-            midArif = sumNumbers / counter;
+            midArif = sumNumbers / counter;     // or sumNumbers / lineSeparated.length (сумму чисел на длинну массива
             System.out.printf(midArif + " --> " + "%.3f", midArif);
 
         } catch (FileNotFoundException e) {

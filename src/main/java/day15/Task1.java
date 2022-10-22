@@ -23,7 +23,7 @@ public class Task1 {
                 if (Integer.parseInt(listShoes[2]) == 0) {
                         pw.println(line);
                 }
-            } scanner.close(); pw.close();
+            }  pw.close(); scanner.close();
         } catch(FileNotFoundException e){
             System.out.println("File not found");
         } catch (IllegalArgumentException e){

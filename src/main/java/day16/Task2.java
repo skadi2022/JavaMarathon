@@ -37,6 +37,7 @@ public class Task2 {
             }
         }
         pw2.close();
+        scanner.close();
 
         printResult(file2);
         }
@@ -49,7 +50,7 @@ public class Task2 {
 
             for (int i = 0; i < numbers.length; i++) {
                 sumFile2 += Double.parseDouble(numbers[i]);
-            }
+            } scanner.close();
             System.out.println((int)sumFile2);
     }
 }
