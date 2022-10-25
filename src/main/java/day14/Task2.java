@@ -28,7 +28,7 @@ public class Task2 {
             } scanner.close();
             return listOfPeoples;
         } catch (FileNotFoundException e) {
-            System.out.println("File not found");
+            e.printStackTrace();
         } catch (FileContentsExeption e) {
             e.printStackTrace();
         }

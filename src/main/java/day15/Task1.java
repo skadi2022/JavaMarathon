@@ -18,16 +18,16 @@ public class Task1 {
                 String[] listShoes = line.split(";");
 
                 if (listShoes.length != 3)
-                    throw new IllegalArgumentException();
+                    throw new IllegalArgumentException("Invalid input file");
 
                 if (Integer.parseInt(listShoes[2]) == 0) {
                         pw.println(line);
                 }
             }  pw.close(); scanner.close();
         } catch(FileNotFoundException e){
-            System.out.println("File not found");
+            e.printStackTrace();
         } catch (IllegalArgumentException e){
-            System.out.println("Invalid input file");
+            e.printStackTrace();
         }
     }
 }

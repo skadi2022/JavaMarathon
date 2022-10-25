@@ -26,7 +26,7 @@ public class Task1 {
             if (counter != 10) throw new FileContentsExeption("Invalid input file, amount of numbers < or > 10");
                 System.out.println(sumNumbers);
         } catch (FileNotFoundException | FileContentsExeption e) {
-            System.out.println("File not found");
+            e.printStackTrace();
         }
     }
 }

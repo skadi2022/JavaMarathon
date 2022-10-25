@@ -28,7 +28,7 @@ public class Task1 {
             System.out.printf(midArif + " --> " + "%.3f", midArif);
 
         } catch (FileNotFoundException e) {
-            System.out.println("File not found");
+            e.printStackTrace();
         } return midArif;
     }
 }
